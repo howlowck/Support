@@ -17,3 +17,19 @@ if ( ! function_exists('slugify'))
         return implode('-', $ret);
     }
 }
+
+if ( ! function_exists('is_empty')) {
+    /**
+     * Test if Empty
+     *
+     * @param  mixed $input
+     * @return  bool 
+     */
+    function is_empty($input) {
+        $value = $input;
+        if (is_string($value)) {
+            $value = trim($value);
+        }
+        return empty($value) && ! is_numeric($value);
+    }
+}
