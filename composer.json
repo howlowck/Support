@@ -1,0 +1,23 @@
+{
+    "name": "howlowck/support",
+    "description": "",
+    "authors": [
+        {
+            "name": "Hao Luo",
+            "email": "howlowck@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.0.x"
+    },
+    "autoload": {
+        "psr-0": {
+            "Howlowck\\Support": "src/"
+        },
+        "files": [
+            "Howlowck/Support/src/helpers.php"
+        ]
+    },
+    "minimum-stability": "dev"
+}
