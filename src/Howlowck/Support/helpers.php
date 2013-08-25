@@ -3,11 +3,9 @@
 if ( ! function_exists('slugify'))
 {
     /**
-     * Generate a URL to a controller action.
+     * Slugify a string
      *
-     * @param  string  $name
-     * @param  string  $parameters
-     * @param  bool    $absolute
+     * @param  string    $input
      * @return string
      */
     function slugify($input) {
