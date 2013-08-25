@@ -16,7 +16,7 @@
             "Howlowck\\Support": "src/"
         },
         "files": [
-            "Howlowck/Support/src/helpers.php"
+            "Howlowck/Support/helpers.php"
         ]
     },
     "minimum-stability": "dev"
