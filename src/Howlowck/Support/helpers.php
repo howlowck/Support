@@ -51,3 +51,18 @@ if ( ! function_exists('array_contains')) {
         return $output;
     }
 }
+
+if ( ! function_exists('array_to_li')) {
+    /**
+     * Convert a PHP array to html li elements
+     * @param array Input Array
+     * @return  string
+     */
+    function array_to_li(array $array) {
+        $output = '';
+        foreach ($array as $value) {
+            $output .= '<li>' . $value . '</li>';
+        }
+        return $output;
+    }
+}
