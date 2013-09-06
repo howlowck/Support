@@ -34,11 +34,13 @@ class HelpersTest extends PHPUnit_Framework_TestCase {
     public function testBoolToWord() {
         $this->assertEquals('Yes', bool_to_word(true));
         $this->assertEquals('Yes', bool_to_word(1));
-        $this->assertEquals('Yep!', bool_to_word(1, 'Yep!:Nope!'));
+        $this->assertEquals('Yep!', bool_to_word(1, 'Yep!:Nope!:Who Knows??'));
         $this->assertEquals('No', bool_to_word(false));
-        $this->assertEquals('No', bool_to_word(null));
         $this->assertEquals('No', bool_to_word(0));
-        $this->assertEquals('Nope!', bool_to_word(0, 'Yep!:Nope!'));
+        $this->assertEquals('Nope!', bool_to_word(0, 'Yep!:Nope!:Who Knows??'));
+
+        $this->assertEquals('N/A', bool_to_word(null));
+        $this->assertEquals('Who Knows??', bool_to_word(null, 'Yep!:Nope!:Who Knows??'));
 
     }
 }

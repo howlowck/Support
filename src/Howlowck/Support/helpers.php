@@ -74,10 +74,14 @@ if ( ! function_exists('bool_to_word')) {
      * @param string Yes/No String
      * @return  string
      */
-    function bool_to_word($value, $config = 'Yes:No') {
+    function bool_to_word($value, $config = 'Yes:No:N/A') {
         $yesNo = explode(':', $config);
         $yesString = $yesNo[0];
         $noString = $yesNo[1];
+        $nullString = $yesNo[2];
+        if (is_null($value)) {
+            return $nullString;
+        }
         if ((bool) $value) {
             return $yesString;
         } else {
