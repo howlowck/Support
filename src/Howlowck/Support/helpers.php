@@ -33,3 +33,21 @@ if ( ! function_exists('is_empty')) {
         return empty($value) && ! is_numeric($value);
     }
 }
+
+if ( ! function_exists('array_contains')) {
+    /**
+     * Test if an array or string is in another array
+     * @param  array haystack
+     * @param  mixed needle
+     * 
+     * @return  bool 
+     */
+    function array_contains($haystack, $needle) {
+        $needle = (array) $needle;
+        $output = true;
+        foreach ($needle as $value) {
+            $output = ($output and in_array($value, $haystack));
+        }
+        return $output;
+    }
+}
