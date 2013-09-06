@@ -66,3 +66,23 @@ if ( ! function_exists('array_to_li')) {
         return $output;
     }
 }
+
+if ( ! function_exists('bool_to_word')) {
+    /**
+     * Convert Boolean Value to Human readable string
+     * @param mixed $input
+     * @param string Yes/No String
+     * @return  string
+     */
+    function bool_to_word($value, $config = 'Yes:No') {
+        $yesNo = explode(':', $config);
+        $yesString = $yesNo[0];
+        $noString = $yesNo[1];
+        if ((bool) $value) {
+            return $yesString;
+        } else {
+            return $noString;
+        }
+
+    }
+}

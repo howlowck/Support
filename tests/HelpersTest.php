@@ -31,4 +31,14 @@ class HelpersTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals('<li>foo</li><li>bar</li><li>baz</li>', array_to_li($arrayA));
         $this->assertEquals('<li>foo</li>', array_to_li($arrayB));
     }
+    public function testBoolToWord() {
+        $this->assertEquals('Yes', bool_to_word(true));
+        $this->assertEquals('Yes', bool_to_word(1));
+        $this->assertEquals('Yep!', bool_to_word(1, 'Yep!:Nope!'));
+        $this->assertEquals('No', bool_to_word(false));
+        $this->assertEquals('No', bool_to_word(null));
+        $this->assertEquals('No', bool_to_word(0));
+        $this->assertEquals('Nope!', bool_to_word(0, 'Yep!:Nope!'));
+
+    }
 }
