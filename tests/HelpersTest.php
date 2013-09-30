@@ -16,6 +16,14 @@ class HelpersTest extends PHPUnit_Framework_TestCase {
         $this->assertFalse(is_empty('foobar'));
         $this->assertFalse(is_empty(true));
     }
+    public function testIsOnlyFalse() {
+        $this->assertFalse(is_only_false(true));
+        $this->assertTrue(is_only_false(false));
+        $this->assertTrue(is_only_false(0));
+        $this->assertFalse(is_only_false(null));
+        $this->assertTrue(is_only_false(0, true));
+        $this->assertFalse(is_only_false(false, true));
+    }
     public function testArrayContains() {
         $arrayA = array('foo', 'bar', 'baz');
         $arrayB = array('foo', 'bar');

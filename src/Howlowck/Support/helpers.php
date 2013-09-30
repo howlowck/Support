@@ -33,7 +33,20 @@ if ( ! function_exists('is_empty')) {
         return empty($value) && ! is_numeric($value);
     }
 }
-
+if ( ! function_exists('is_only_false')) {
+    /**
+     *  Test if value is only false or zero
+     *  @param mixed $value
+     *  @param   bool $zeroOnly Only consider 0 and not False
+     *  @return  bool
+     */
+    function is_only_false($value, $zeroOnly = false) {
+        if ($zeroOnly) {
+            return !is_null($value) and !is_bool($value) and $value == 0;
+        }
+        return !is_null($value) and ($value == 0 or $value == false);
+    }
+}
 if ( ! function_exists('array_contains')) {
     /**
      * Test if an array or string is in another array
