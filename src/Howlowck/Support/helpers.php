@@ -23,7 +23,7 @@ if ( ! function_exists('is_empty')) {
      * Test if Empty
      *
      * @param  mixed $input
-     * @return  bool 
+     * @return  bool
      */
     function is_empty($input) {
         $value = $input;
@@ -52,8 +52,8 @@ if ( ! function_exists('array_contains')) {
      * Test if an array or string is in another array
      * @param  array haystack
      * @param  mixed needle
-     * 
-     * @return  bool 
+     *
+     * @return  bool
      */
     function array_contains($haystack, $needle) {
         $needle = (array) $needle;
@@ -101,5 +101,14 @@ if ( ! function_exists('bool_to_word')) {
             return $noString;
         }
 
+    }
+}
+
+if ( ! function_exists('dad')) {
+    /**
+     * Dump All Die
+     */
+    function dad() {
+        array_map(function($value) { d($value); }, func_get_args()); die;
     }
 }
