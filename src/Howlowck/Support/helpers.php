@@ -126,11 +126,11 @@ if ( ! function_exists('bool_to_word')) {
     }
 }
 
-if ( ! function_exists('dad')) {
-    /**
-     * Dump All Die
-     */
-    function dad() {
-        array_map(function($value) { d($value); }, func_get_args()); die;
-    }
-}
+// if ( ! function_exists('dad')) {
+//     /**
+//      * Dump All Die
+//      */
+//     function dad() {
+//         array_map(function($value) { d($value); }, func_get_args()); die;
+//     }
+// }
