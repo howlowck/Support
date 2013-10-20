@@ -33,6 +33,18 @@ class HelpersTest extends PHPUnit_Framework_TestCase {
         $this->assertFalse(array_contains($arrayA, $arrayC));
         $this->assertTrue(array_contains($arrayA, 'bar'));
     }
+    public function testArrayExclude() {
+        $arrayA = array('foo', 'bar', 'baz');
+        $arrayB = array('bar');
+        $expected = array('foo', 'baz');
+        $actual = array_exclude($arrayA, $arrayB);
+        $this->assertEquals($expected, $actual);
+
+        $arrayB = array('bar', 'baz');
+        $expected = array('foo');
+        $actual = array_exclude($arrayA, $arrayB);
+        $this->assertEquals($expected, $actual);
+    }
     public function testArrayToLi() {
         $arrayA = array('foo', 'bar', 'baz');
         $arrayB = array('foo');

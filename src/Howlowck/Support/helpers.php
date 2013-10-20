@@ -65,6 +65,28 @@ if ( ! function_exists('array_contains')) {
     }
 }
 
+if ( ! function_exists('array_exclude'))
+{
+    /**
+     * Exclude an array
+     *
+     * @param  array  $orig
+     * @param  array  $exclude
+     * @return string
+     */
+    function array_exclude(array $orig, $exclude) {
+        $output = [];
+        $exclude = (array) $exclude;
+        foreach ($orig as $item) {
+            if (in_array($item, $exclude)) {
+                continue;
+            }
+            $output[] = $item;
+        }
+        return $output;
+    }
+}
+
 if ( ! function_exists('array_to_li')) {
     /**
      * Convert a PHP array to html li elements
