@@ -63,4 +63,8 @@ class HelpersTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals('Who Knows??', bool_to_word(null, 'Yep!:Nope!:Who Knows??'));
 
     }
+    public function testModelName() {
+        $this->assertEquals('Post', model_name('posts'));
+        $this->assertEquals('PostPicture', model_name('post_pictures'));
+    }
 }

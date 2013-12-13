@@ -126,6 +126,18 @@ if ( ! function_exists('bool_to_word')) {
     }
 }
 
+
+if ( ! function_exists('model_name')) {
+    /**
+     * Convert Boolean Value to Human readable string
+     * @param mixed $input
+     * @param string Yes/No String
+     * @return  string
+     */
+    function model_name($value) {
+        return studly_case(str_singular($value));
+    }
+}
 // if ( ! function_exists('dad')) {
 //     /**
 //      * Dump All Die
